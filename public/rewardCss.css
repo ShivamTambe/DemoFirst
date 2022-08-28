@@ -1,0 +1,105 @@
+.rewardstop{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1064px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+.rtitle{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+}
+.rdis{
+    margin-top: 1rem;
+    margin-bottom: 1em;
+    color: rgba(255,255,255,.6);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.rewardsbottom{
+    padding-top: 4em;
+    padding-bottom: 4em;
+    max-width: 1064px;
+    display: flex;
+    margin: 0 auto;
+    gap: 20px;
+}
+.rlogo{
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 1em;
+    background-color: rgba(20,20,20,.32);
+    cursor: pointer;
+    flex: 1;
+    border: 1px solid hsla(0,0%,100%,.08);
+    border-radius: 1em;
+    padding: 1em;
+    transition: .2s;
+    color: #fff;
+    box-sizing: border-box;
+    height: 94px;
+}
+.rlogo img{
+    width: 4em;
+    margin-right: 1em;
+}
+.righttop{
+    color: #ededef;
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.rightsite{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    color: #ededef;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -.035em;
+}
+.rightdis{
+    color: #a09fa6;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 400;
+}
+.rrightsec{
+    box-sizing: border-box;
+}
+.rlogoimg img{
+    box-sizing: border-box;
+}
+.rewardsright1{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.rewardsright{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.catageory{
+    margin-bottom: 0.25em;
+    transition: .2s;
+    color: #a09fa6;
+    font-size: .75rem;
+    line-height: 1rem;
+}
+.all{
+    margin-bottom: 0.5em;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
