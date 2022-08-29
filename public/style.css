@@ -1621,3 +1621,16 @@ body {
 .navbar{
     height: 70px;
 }
+.logo2div{
+    width: 30px;
+    height: 30px;
+    background-image: url('https://assets.website-files.com/609486d2fafa37698a57db5b/609bf4ae6380ac34e545f653_firstbase-logo.svg');
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    background-size: 135px;
+}
+.logo2title{
+    position: relative;
+    left: 35px;
+    top: -22px;
+}
