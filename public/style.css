@@ -1150,6 +1150,7 @@ img {
     align-items: center;
     border-radius: 0.5rem;
     background-image: linear-gradient(135deg,#8a0083,#a3117a 48%,#e94057 83%,#f25d00);
+    background-image: linear-gradient(135deg,#002d8a,#30a311 48%,#5de940 83%,#f2e400);
     box-sizing: border-box;
 }
 .div-block-377 {
