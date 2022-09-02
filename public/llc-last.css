@@ -1,0 +1,57 @@
+.main{
+    color: red;
+}
+.typetitle{
+    display: flex;
+}
+.softtype{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+select, input{
+    height: 100%;
+    background-color: #1c1c1f;
+    border: 1px solid #34343a;
+    border-radius: 8px;
+    padding: 13px 14px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 699px;
+    color: white;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.llcsecond{
+    display: flex;
+    justify-content: space-between;
+    width: 699px;
+}
+input{
+    width: auto;
+    height: auto;
+    width: 310px;
+}
+/* .startlast {
+    margin-top:200px ;
+} */
+.llctitle{
+    display: flex;
+}
+.short{
+    font-size: 12px;
+}
+#industrytype{
+    width: 310px;
+    height: auto;
+}
+.llctitle{
+    margin-bottom: 10px;
+}

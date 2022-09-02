@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/startbusiness.css">
+    <title>Unrelenting Enterprises</title>
+</head>
+<body>
+    <div class="topselectlogo">Unrelenting Enterprises</div>
+    <div class="startbusinesscontainer">
+        <div class="starttop">
+            <div class="l">company type</div>
+            <div class="r">0%</div>
+        </div>
+        <div class="startseccond">
+            <div class="secondtitle">Let's start your business.</div>
+            <div class="seconddis">Choose your company structure.</div>
+        </div>
+        <form action="/next" method="post">
+            <div class="startthird">
+                <div class="sthirdtop" tabindex="1" id="r1">
+                    <div class="thirdsec">
+                        <div class="thirdtitle">LLC</div>
+                        <input type="radio" name="radio" class="radio" value="1" onclick="myFunction()">
+                        <div class="thirddis">Great for small businesses and flexibility.</div>
+                    </div>
+                </div>
+                <div class="sthirdtop" tabindex="1" id="r2">
+                    <div class="thirdsec">
+                        <div class="thirdtitle">C-Corporation</div>
+                        <input type="radio" name="radio" class="radio" value="2" onclick="myFunction()">
+                        <div class="thirddis">Great for startups fundraising from investors.</div>
+                    </div>
+                </div>
+                <div class="sthirdtop" tabindex="1" id="r3">
+                    <div class="thirdsec">
+                        <div class="thirdtitle">I dont know</div> 
+                        <input type="radio" name="radio"  class="radio" value="3" onclick="myFunction()">
+                        <div class="thirddis">Help me to choose</div>
+                    </div>
+                </div>
+            </div>
+            <div class="startlast">
+                <button class="next" id="nextbtn" type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+    <div class="cancle">Cancel Application</div>
+</body>
+<script>
+    console.log("HELLO");
+    let ele = document.getElementsByName("radio");
+    let r1 = document.querySelector("#r1");
+    let r2 = document.querySelector("#r2");
+    let r3 = document.querySelector("#r3");
+
+    function myFunction(){
+        for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked){
+                    if(ele[i].value == 1){
+                        r1.style.border = "2px solid #f16a50";
+                        r2.style.border = "0px";
+                        r3.style.border = "0px";
+                    }
+                    if(ele[i].value == 2){
+                        r1.style.border = "0px";
+                        r2.style.border = "2px solid #f16a50";
+                        r3.style.border = "0px";
+                    }
+                    if(ele[i].value == 3){
+                        r1.style.border = "0px";
+                        r2.style.border = "0px";
+                        r3.style.border = "2px solid #f16a50";
+                    }
+                }
+        }
+    }
+</script>
+</html>

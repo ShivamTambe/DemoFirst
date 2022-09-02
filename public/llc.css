@@ -1,0 +1,22 @@
+.what a{
+    color: #f16a50;
+    text-decoration: none;
+    position: absolute;
+    top: 354px;
+}
+.startthird{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    transition: all .1s ease;
+    margin-bottom: 130px;
+}
+.startlast{
+    justify-content: space-between;
+}
+li{
+    font-size: 16px;
+    line-height: 16px;
+    margin: 10px 0;
+}

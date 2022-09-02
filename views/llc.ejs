@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/startbusiness.css">
+    <link rel="stylesheet" href="/llc.css">
+    <title>Unrelenting Enterprises</title>
+</head>
+<body>
+    <div class="topselectlogo">Unrelenting Enterprises</div>
+
+    <div class="startbusinesscontainer">
+        <div class="starttop">
+            <div class="l">State</div>
+            <div class="r">30%</div>
+        </div>
+        <div class="startseccond">
+            <div class="secondtitle">Choose your registration state.</div>
+        </div>
+        <form action="/next" method="post">
+            <div class="startthird">
+                <div class="sthirdtop" tabindex="1" id="r1">
+                    <div class="thirdsec">
+                        <div class="thirdtitle">Delaware</div>
+                        <input type="radio" name="radio" class="radio" value="1-1" onclick="myFunction()">
+                        <div class="thirddis">Great for startups and corporations due to pro-business laws and strong legal protections.</div>
+                    </div>
+                </div>
+                <div class="sthirdtop" tabindex="1" id="r2">
+                    <div class="thirdsec">
+                        <div class="thirdtitle">Wyoming</div>
+                        <input type="radio" name="radio" class="radio" value="1-2" onclick="myFunction()">
+                        <div class="thirddis">Great for LLCs and smaller companies due to easier formation requirements, lower fees, and simplified tax structure.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="what">
+                <a href="">What's the Difference?</a>
+            </div>
+            <div class="startlast">
+                <div class="back">
+                    <a href="/startbusiness">Back</a>
+                </div>
+                <button class="next" id="nextbtn" type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+    <div class="cancle">Cancel Application</div>
+
+    <script>
+        let ele = document.getElementsByName("radio");
+        let r1 = document.querySelector("#r1");
+        let r2 = document.querySelector("#r2");
+
+        function myFunction(){
+            for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked){
+                        if(ele[i].value == "1-1"){
+                            r1.style.border = "2px solid #f16a50";
+                            r2.style.border = "0px";
+                        }
+                        if(ele[i].value == "1-2"){
+                            r1.style.border = "0px";
+                            r2.style.border = "2px solid #f16a50";
+                        }
+                    }
+            }
+        }
+    </script>
+</body>
+</html>

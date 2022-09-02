@@ -1,11 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Quicksand&display=swap');
+.navbtn a{
+    font-family: 'Quicksand', sans-serif;
+    opacity: 1;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.navbtn a:hover{
+    opacity: 1;
+    color: white;
+}
+.topp{
+    display: flex;
+    justify-content: space-between;
+}
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: black;
+    /* background-color: #227143;
+    background-color: #4C8E17;
+    background-color: #64C3ED; */
     color: white;
     font-family: 'Acumin Pro',sans-serif;
     color: #ededef;
+    /* color: #08418B; */
     font-weight: 400;
 }
 .top{
@@ -35,6 +55,9 @@ body{
     position: static;
     z-index: 40;
     background-color: #020314;
+    /* background-color: #1b7348;
+    background-color: #528839;
+    background-color: #64bee7; */
     backdrop-filter: blur(8px);
     justify-content: space-between;
     font-size: 16px;
@@ -65,14 +88,16 @@ body{
     grid-row-gap: 1rem;
 }
 .startbtn{
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 0.25rem;
     background-color: #020314;
     color: #ededef;
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: .875rem;
+    z-index: 1000;
 }
 .startbtncover{
+    z-index: 1000;
     padding: 1px;
     border-radius: 0.25rem;
     background-image: linear-gradient(135deg,#8a2387,#e94057 50%,#f27121);
@@ -110,6 +135,7 @@ body{
 }
 .blinktxt{
     letter-spacing: -.025em;
+    background-image: linear-gradient(135deg,#8a0086,#920481 8%,#9b097c 18%,#a00c79 23%,#a91174 32%,#b1166f 41%,#bc1d68 53%,#c72361 65%,#d2295b 76%,#df3153 90%,#e9364e 100%,#f27121);
     background-image: linear-gradient(135deg,#8a0086,#920481 8%,#9b097c 18%,#a00c79 23%,#a91174 32%,#b1166f 41%,#bc1d68 53%,#c72361 65%,#d2295b 76%,#df3153 90%,#e9364e 100%,#f27121);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1634,4 +1660,29 @@ body {
     position: relative;
     left: 35px;
     top: -22px;
+}
+
+.navbtn a:hover{
+    color: #07A3D7;
+}
+.navbtn a{
+    color: #F7F4E9;
+}
+/* .sec2toppanel,.sec2mid1panel, .sec2mid2panel,.sec6panel,.feature-card {
+    background-color: #dff8c9ac;
+    background-color: #c6eff9b0;
+    color: #203D14;
+    color: #3F7392;
+} */
+/* .sec2panel{
+    background-color: rgba(0, 128, 0, 0);
+} */
+.sec1imgg, .sec2backimg, .hero-bg {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+.startbtn:hover{
+    cursor: pointer;
+}
+.startbtncover:hover{
+    cursor: pointer;
 }
