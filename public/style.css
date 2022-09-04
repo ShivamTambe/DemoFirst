@@ -1,9 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Playfair+Display:wght@600&family=Quicksand&display=swap');
+
+@font-face {
+    font-family: 'playFair';
+    src: url(fonts/Myfont.ttf);
+}
 .navbtn a{
     font-family: 'Quicksand', sans-serif;
     opacity: 1;
     margin: 0 10px;
     font-size: 0.9rem;
+}
+.titletop{
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+.titledis{
+    font-family: 'Dosis', sans-serif;
 }
 
 .navbtn a:hover{
@@ -27,6 +39,7 @@ body{
     color: #ededef;
     /* color: #08418B; */
     font-weight: 400;
+    font-family: 'playFair', sans-serif;
 }
 .top{
     margin-left: auto;
@@ -1636,11 +1649,16 @@ body {
     /* background-position: center center; */
     background-repeat: no-repeat;
     background-size: 135px;
+    display: none;
 }
 .logotitle{
+    display: flex;
+    flex-direction: column;
     position: relative;
     left: 18px;
-    top: -30px;
+    top: 3px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 .logo a{
     height: 50px;

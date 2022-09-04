@@ -12,11 +12,17 @@ app.use(bodyparser.urlencoded({extended:false}))
 
 
 app.get("/", function(req, res){
-    res.render("index");
+    res.render("login");
+})
+app.get("/signup", function(req, res){
+    res.render("signup");
 })
 
 app.get("/rewards", function(req, res){
     res.render("rewards");
+})
+app.get("/index", function(req, res){
+    res.render("index");
 })
 
 app.get("/company", function(req, res){
@@ -39,6 +45,18 @@ app.get("/startbusiness", function(req, res){
 })
 app.get("/llc", function(req, res){
     res.render("llc");
+})
+app.get("/home", function(req, res){
+    res.render("index");
+})
+app.get("/llc-last",function(req, res){
+    res.render("llc-last");
+})
+app.get("/don'tknow",function(req, res){
+    res.render("don'tknow");
+})
+app.get("/login",function(req, res){
+    res.render("login");
 })
 
 app.post("/next",function(req, res){
@@ -63,6 +81,21 @@ app.post("/next",function(req, res){
     if(value == "1-2"){
         res.render("llc-last");
     }
+})
+
+app.post("/login",function(req, res){
+    let email = req.body.email;
+    let password = req.body.password;
+
+    if(email === "admin@gmail.com" && password === "admin@1234"){
+        res.redirect("/index");
+    }
+    else{
+        res.redirect("/");
+    }
+})
+app.post("/signup", function(req, res){
+    res.redirect("/login");
 })
 app.listen(port, function(){
     console.log("server is running on prot "+ port);

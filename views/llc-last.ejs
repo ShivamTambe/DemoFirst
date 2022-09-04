@@ -11,7 +11,22 @@
     <title>Unrelenting Enterprises</title>
 </head>
 <body>
-    <div class="topselectlogo">Unrelenting Enterprises</div>
+    <div class="canceldiv" id="cancelid">
+        <div class="cancelapp">
+            <div class="canceltitle">Cancel Aopplication</div>
+            <div class="canceldis">Are you sure you want to cancel the application? All of your data will be removed. This action cannot be undone.</div>
+            <div class="cancelbtns">
+                <a href="/home"><div class="cno cancelbtn">Confirm</div></a>
+                <a href="/llc-last"><div class="cconfirm cancelbtn">No</div></a>
+            </div>
+        </div>
+    </div>
+    <div class="topselectlogo">
+        <div class="logotitle"> 
+            <div class="titletop">Unrelenting</div>
+            <div class="titledis">Enterprises</div>
+         </div>
+    </div>
 
     <div class="startbusinesscontainer">
         <div class="starttop">
@@ -79,8 +94,17 @@
             </div>
         </form>
     </div>
-    <div class="cancle">Cancel Application</div>
+    <img src="https://assets.website-files.com/609486d2fafa37698a57db5b/628e756e9f4514d25e1825d3_agent-herobg.svg"
+    alt="" class="sec1imgg">
+    <div class="cancle"onclick="cancel()">Cancel Application</div>
 
 
 </body>
+<script>
+    let canceldiv = document.querySelector("#cancelid");
+    function cancel(){
+        console.log('Hello');
+        canceldiv.style.display = "flex";
+    }
+</script>
 </html>
