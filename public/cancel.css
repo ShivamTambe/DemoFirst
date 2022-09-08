@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+}
+.cancel{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}
+.canceldis{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.canceltitle{
+    font-size: 40px;
+}

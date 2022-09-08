@@ -3,13 +3,35 @@ const path = require ("path");
 const ejs = require("ejs");
 const app = express();
 const bodyparser = require('body-parser');
+require("dotenv").config();
+const cors = require("cors");
+const { ppid } = require("process");
 
 const port = process.env.PORT || 5000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
-app.use(bodyparser.urlencoded({extended:false}))
+app.use(
+    cors({
+        origin: "*",
+    })
 
+)
+
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(express.json());
+// ppid.use(
+//     cors({
+//         origin: "http://localhost:500"
+//     })
+// )
+
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+
+const storeItems = new Map([
+    [1, { priceInCents: 10000, name: "Add a US business address"}],
+    [2, { priceInCents: 20000, name : "Manage your business"}],
+])
 
 app.get("/", function(req, res){
     res.render("login");
@@ -92,6 +114,33 @@ app.post("/login",function(req, res){
     }
     else{
         res.redirect("/");
+    }
+})
+app.post("/create-checkout-session", async (req, res)=>{
+    try{
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types : ["card"],
+            mode : "payment",
+            line_items: req.body.items.map(item =>{
+                const storeItem = storeItems.get(item.id)
+                return{
+                    price_data: {
+                        currency: "usd",
+                        product_data:{
+                            name :storeItem.name
+                        },
+                        unit_amount: storeItem.priceInCents,
+                    },
+                    quantity: item.quantity
+                }
+            }),
+            success_url: `${process.env.SERVER_URL}/company.ejs`,
+            cancel_url: `${process.env.SERVER_URL}/cancel.html`
+        })
+        res.json({ url : session.url})
+    }
+    catch(e){
+        res.status(500).json({ error : e.message})
     }
 })
 app.post("/signup", function(req, res){
