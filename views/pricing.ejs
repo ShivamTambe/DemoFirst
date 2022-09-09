@@ -5,14 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/pricing.css">
     <title>Unrelenting Enterprises</title>
 </head>
 <body>
     <%- include('../partials/header.ejs'); %>
 
-    <h1 class="buybutton">
-        Buy
-    </h1>
+    <div class="pricing">
+        <div class="price1">
+            <div class="price">
+                <div class="title">
+                    <div class="titletopp">FIRSTBASE START™</div>
+                    <div class="titlet">Start a US-based business</div>
+                </div>
+                <div class="pricedis">
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+    
+                </div>
+                <div class="amt">$100</div>
+                <div class="buy">
+                    <h1 class="buybutton" id="num1">
+                        Buy
+                    </h1>
+                </div>
+            </div>
+            <div class="price">
+                <div class="title">
+                    <div class="titletopp">FIRSTBASE START™</div>
+                    <div class="titlet">Start a US-based business</div>
+                </div>
+                <div class="pricedis">
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+    
+                </div>
+                <div class="amt">$100</div>
+                <div class="buy">
+                    <h1 class="buybutton" id="num2">
+                        Buy
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="price2">
+            <div class="price">
+                <div class="title">
+                    <div class="titletopp">FIRSTBASE START™</div>
+                    <div class="titlet">Start a US-based business</div>
+                </div>
+                <div class="pricedis">
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
+                </div>
+                <div class="amt">$100</div>
+                <div class="buy">
+                    <h1 class="buybutton" id="num3">
+                        Buy
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="https://assets.website-files.com/609486d2fafa37698a57db5b/628e756e9f4514d25e1825d3_agent-herobg.svg"
+                alt="" class="sec1imgg">
 
     <%- include('../partials/footer.ejs') %>
     
@@ -20,16 +86,37 @@
 <!-- <script src="script.js"></script> -->
 <script>
     const button = document.querySelector(".buybutton");
-    button.addEventListener("click",()=>{
-        fetch("http://localhost:5000/create-checkout-session",{
+    const button2 = document.querySelector(".buybutton2");
+    const button3 = document.querySelector(".buybutton3");
+    const no = document.getElementsByClassName("nums");
+    const one = document.getElementById("one");
+    const sec = document.getElementById("sec");
+    const third = document.getElementById("third");
+    // num =3
+
+    document.addEventListener("click",(event)=>{
+        console.log(event.target.className)
+        let id1;
+        if(event.target.className == "buybutton"){
+            console.log("HELLO");
+            if(event.target.id == "num1"){
+                id1 = 1;
+            }
+            if(event.target.id == "num2"){
+                id1 = 2;
+            }
+            if(event.target.id == "num3"){
+                id1 = 3;
+            }
+
+            fetch("http://localhost:5000/create-checkout-session",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 items: [
-                    { id:1, quantity: 1 },
-                    { id:2, quantity: 1 }
+                    { id: id1, quantity: 1 },
                 ]
             })
         }).then(res => {
@@ -41,8 +128,13 @@
         window.location = url
     })
     .catch(e =>{
+        console.log(e);
         console.error(e.error)
     })
+        }
+
+
+    
 })
 </script>
 </html>

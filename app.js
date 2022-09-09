@@ -29,8 +29,9 @@ app.use(express.json());
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 const storeItems = new Map([
-    [1, { priceInCents: 10000, name: "Add a US business address"}],
+    [1, { priceInCents: 10000, name: "Start a US-based business"}],
     [2, { priceInCents: 20000, name : "Manage your business"}],
+    [3, { priceInCents: 30000, name : "Add a US business address"}],
 ])
 
 app.get("/", function(req, res){
@@ -118,6 +119,7 @@ app.post("/login",function(req, res){
 })
 app.post("/create-checkout-session", async (req, res)=>{
     try{
+        const no = 1;
         const session = await stripe.checkout.sessions.create({
             payment_method_types : ["card"],
             mode : "payment",
