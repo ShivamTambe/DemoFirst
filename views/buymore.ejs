@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/pricing.css">
+    <link rel="stylesheet" href="/buymore.css">
     <title>Unrelenting Enterprises</title>
 </head>
 <body>
     <%- include('../partials/header.ejs'); %>
-
+    <div class="store">Unrelenting Enterprises Store</div>
     <div class="pricing">
         <div class="price1">
             <div class="price">
                 <div class="title">
                     <div class="titletopp">FIRSTBASE START™</div>
-                    <div class="titlet">Start a US-based business</div>
+                    <div class="titlet">A place to buy a business address</div>
                 </div>
                 <div class="pricedis">
                     <div class="disinfo">Formation of company in Delaware or Wyoming</div>
@@ -26,7 +27,7 @@
                     <div class="disinfo">Formation of company in Delaware or Wyoming</div>
     
                 </div>
-                <div class="amt">$100</div>
+                <div class="amt">$150</div>
                 <div class="buy">
                     <h1 class="buybutton" id="num1">
                         Buy
@@ -36,7 +37,7 @@
             <div class="price">
                 <div class="title">
                     <div class="titletopp">FIRSTBASE START™</div>
-                    <div class="titlet">Manage your business</div>
+                    <div class="titlet">A place to buy a business phone number</div>
                 </div>
                 <div class="pricedis">
                     <div class="disinfo">Formation of company in Delaware or Wyoming</div>
@@ -46,38 +47,13 @@
                     <div class="disinfo">Formation of company in Delaware or Wyoming</div>
     
                 </div>
-                <div class="amt">$200</div>
+                <div class="amt">$50</div>
                 <div class="buy">
                     <h1 class="buybutton" id="num2">
                         Buy
                     </h1>
                 </div>
             </div>
-        </div>
-        <div class="price2">
-            <div class="price">
-                <div class="title">
-                    <div class="titletopp">FIRSTBASE START™</div>
-                    <div class="titlet">Add a US business address</div>
-                </div>
-                <div class="pricedis">
-                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
-                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
-                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
-                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
-                    <div class="disinfo">Formation of company in Delaware or Wyoming</div>
-                </div>
-                <div class="amt">$300</div>
-                <div class="buy">
-                    <h1 class="buybutton" id="num3">
-                        Buy
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="buymore">
-            <a href="/buymore">Business address and many more.....</a>
         </div>
     </div>
 
@@ -86,17 +62,10 @@
             
 
     <%- include('../partials/footer.ejs') %>
-    
 </body>
-<!-- <script src="script.js"></script> -->
+
 <script>
     const button = document.querySelector(".buybutton");
-    const button2 = document.querySelector(".buybutton2");
-    const button3 = document.querySelector(".buybutton3");
-    const no = document.getElementsByClassName("nums");
-    const one = document.getElementById("one");
-    const sec = document.getElementById("sec");
-    const third = document.getElementById("third");
     // num =3
 
     document.addEventListener("click",(event)=>{
@@ -105,13 +74,10 @@
         if(event.target.className == "buybutton"){
             console.log("HELLO");
             if(event.target.id == "num1"){
-                id1 = 1;
+                id1 = 4;
             }
             if(event.target.id == "num2"){
-                id1 = 2;
-            }
-            if(event.target.id == "num3"){
-                id1 = 3;
+                id1 = 5;
             }
 
             fetch("/create-checkout-session",{

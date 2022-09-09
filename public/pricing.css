@@ -89,3 +89,13 @@ input{
     font-size: 1rem;
     line-height: 1.5rem;
 }
+.buymore a{
+    color: #8b7139;
+}
+.buymorea:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.buymore a:hover{
+    color: #E2B659;
+}

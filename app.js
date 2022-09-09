@@ -32,6 +32,8 @@ const storeItems = new Map([
     [1, { priceInCents: 10000, name: "Start a US-based business"}],
     [2, { priceInCents: 20000, name : "Manage your business"}],
     [3, { priceInCents: 30000, name : "Add a US business address"}],
+    [4, {priceInCents:15000, name:"A place to buy a business address"}],
+    [5, {priceInCents:5000, name:"A place to buy a business phone number"}],
 ])
 
 app.get("/", function(req, res){
@@ -80,6 +82,9 @@ app.get("/don'tknow",function(req, res){
 })
 app.get("/login",function(req, res){
     res.render("login");
+})
+app.get("/buymore", function(req,res){
+    res.render("buymore")
 })
 
 app.post("/next",function(req, res){
