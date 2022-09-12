@@ -20,7 +20,6 @@ app.use(
     cors({
         origin: "*",
     })
-
 )
 
 app.use(bodyparser.urlencoded({extended:false}))
@@ -40,7 +39,6 @@ const storeItems = new Map([
     [4, {priceInCents:15000, name:"A place to buy a business address"}],
     [5, {priceInCents:5000, name:"A place to buy a business phone number"}],
 ])
-
 
 const loginSchema = {
         firstName : String,
@@ -232,8 +230,6 @@ app.post("/create-checkout-session", async (req, res)=>{
         res.status(500).json({ error : e.message})
     }
 })
-
-
 // app.listen(app.get("port"), function(){
 //     console.log("server is running on prot "+ app.get("port"));
 // })
