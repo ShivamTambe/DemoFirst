@@ -230,6 +230,9 @@ app.post("/create-checkout-session", async (req, res)=>{
         res.status(500).json({ error : e.message})
     }
 })
+
+
+
 // app.listen(app.get("port"), function(){
 //     console.log("server is running on prot "+ app.get("port"));
 // })
