@@ -234,9 +234,9 @@ app.post("/create-checkout-session", async (req, res)=>{
 })
 
 
-app.listen(app.get("port"), function(){
-    console.log("server is running on prot "+ app.get("port"));
-})
-// app.listen(port, function(){
-//     console.log("server is running on prot "+ port);
+// app.listen(app.get("port"), function(){
+//     console.log("server is running on prot "+ app.get("port"));
 // })
+app.listen(port, function(){
+    console.log("server is running on prot "+ port);
+})
