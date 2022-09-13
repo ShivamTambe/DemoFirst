@@ -6,6 +6,7 @@ const bodyparser = require('body-parser');
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
+const md5 = require("md5");
 const { ppid } = require("process");
 
 const port = process.env.PORT || 5000;
@@ -31,6 +32,7 @@ app.use(express.json());
 // )
 
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+// const stripe = require("stripe")("");
 
 const storeItems = new Map([
     [1, { priceInCents: 10000, name: "Start a US-based business"}],
@@ -154,27 +156,26 @@ app.post("/next",function(req, res){
     }
 })
 
-
 app.post("/signup", function(req,res){
     let newId = new Id({
         firstName : `${req.body.firstname}`,
         lastName : `${req.body.lastname}`,
         email : `${req.body.email}`,
         screenName : `${req.body.screenname}`,
-        password : `${req.body.password}`,
-        confirmPassword : req.body.confirmpassword,
+        password : md5(req.body.password),
+        confirmPassword : md5(req.body.confirmpassword),
         dateOfBirth : req.body.bday,
         zipCode : req.body.zipcode,
         gender :"male"
     })
-    if(req.body.password === req.body.confirmpassword){
+    if(md5(req.body.password) === md5(req.body.confirmpassword)){
         newId.save();
     }
     res.redirect("/login");
 })
 app.post("/login",async function(req, res){
     let email = req.body.email;
-    let password = req.body.password;
+    let password = md5(req.body.password);
         Id.find({}, function(err, foundItems){
         console.log(foundItems);
         let page = 0;
@@ -188,7 +189,8 @@ app.post("/login",async function(req, res){
                 }
             } 
             if(page >=1){
-                res.redirect("/index")
+                // res.redirect(`/index?name=${email}`)
+                res.redirect("/index");
             }
             else{
                 res.redirect("/login");
@@ -207,6 +209,7 @@ app.post("/create-checkout-session", async (req, res)=>{
         const no = 1;
         const session = await stripe.checkout.sessions.create({
             payment_method_types : ["card"],
+            payment_method_types: ['card', 'afterpay_clearpay'],
             mode : "payment",
             line_items: req.body.items.map(item =>{
                 const storeItem = storeItems.get(item.id)
@@ -221,6 +224,9 @@ app.post("/create-checkout-session", async (req, res)=>{
                     quantity: item.quantity
                 }
             }),
+            shipping_address_collection: {
+                allowed_countries: ['AU', 'CA', 'GB', 'NZ', 'US'],
+              },
             success_url: `${process.env.SERVER_URL}/company.ejs`,
             cancel_url: `${process.env.SERVER_URL}/cancel.html`
         })
