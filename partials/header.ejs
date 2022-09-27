@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="navbar">
-    <div class="logo"><a href="/">
+    <div class="logo"><a href="/index">
     <!-- <img
     src="https://assets.website-files.com/609486d2fafa37698a57db5b/609bf4ae6380ac34e545f653_firstbase-logo.svg"
     alt=""> -->
@@ -35,10 +35,40 @@
             <div class="startbtn">Start my business</div>
         </div> -->
 
-        <div class="startbtncover">
+        <div class="startbtncover signbtn">
             <div class="startbtn">
             <a href="/login">Sign in</a> 
             </div>
         </div>
     </div>
 </div>
+<div class="menu" onclick="getMenu()">
+        
+</div>
+<div class="menuitems" id="menudisplay">
+    <div class="close" onclick="closeMenu()" >
+
+    </div>
+    <div class="navbtnn"><a href="/product">Product</a></div>
+    <div class="navbtnn"><a href="/company">Company</a></div>
+    <div class="navbtnn"><a href="/pricing">Pricing</a></div>
+    <div class="navbtnn"><a href="/rewards"> Rewards</a></div>
+    <div class="navbtnn"><a href="/partners">Partners</a></div>
+    <div class="navbtnn"><a href="/resources">Resources</a></div>
+</div>
+<script>
+    function getMenu(){
+        console.log("HII");
+        let menu = document.querySelector("#menudisplay");
+        menu.style.display="flex";
+        let body = document.body;
+        console.log(body);
+        body.style.overflowY="hidden";
+    }
+    function closeMenu(){
+        let menu = document.querySelector("#menudisplay");
+        menu.style.display="none";
+        let body = document.body;
+        body.style.overflowY="auto";
+    }
+</script>

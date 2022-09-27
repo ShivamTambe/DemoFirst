@@ -1705,3 +1705,74 @@ body {
 }
 
         /* PRICING */
+
+
+.menu{
+    position: absolute;
+    right: 20px;
+    border: 2px solid gray;
+    width: 50px;
+    height: 50px;
+    /* opacity: 0; */
+    border-radius: 100%;
+    background-color: #222;
+    top: 40px;
+    right: 10px;
+    display: none;
+}
+.navbtnn{
+    text-align: center;
+}
+.signbtn{
+    position: relative;
+}
+.menu:hover{
+    background-color: #30a311;
+}
+.menuitems{
+    background-color: rgb(34, 34, 34);
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    right: 100px;
+    z-index: 1001;
+    right: 0px;
+    z-index: 1001;
+    top: 0px;
+    width: 99vw;
+    height: 86vh;
+    justify-content: space-around;
+    display: none;
+    animation: all 0.5 ease-in;
+}
+.close{
+    position: absolute;
+    right: 100px;
+    border: 2px solid gray;
+    width: 50px;
+    height: 50px;
+    /* opacity: 0; */
+    border-radius: 100%;
+    background-color: red;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 0px) and (max-width: 990px) {
+    .signbtn{
+        right: 80px;
+    }
+    .menu{
+        opacity: 1;
+        display: block;
+    }
+  }
